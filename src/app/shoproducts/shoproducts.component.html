@@ -1,0 +1,30 @@
+
+
+
+
+ <div class="btn-group" dropdown>
+    <button id="button-basic" dropdownToggle type="button" class="btn btn-primary dropdown-toggle"
+            aria-controls="dropdown-basic">
+     Select category <span class="caret"></span>
+    </button>
+    <ul id="dropdown-basic"  *dropdownMenu class="dropdown-menu"
+        role="menu" aria-labelledby="button-basic">
+      <li role="menuitem" (click)="onClick('all')"><a class="dropdown-item">All</a></li>
+      <li role="menuitem" (click)="onClick('Premium')"><a class="dropdown-item">Premium</a></li>
+      <li role="menuitem" (click)="onClick('Tamilnadu')"><a class="dropdown-item">Tamilnadu</a></li>
+      
+    </ul>
+  </div>
+  <br>
+<div class="card" style="width: 18rem;" *ngFor="let products of _products">
+  <img [src]="products.p_image" class="card-img-top custom-img" alt="...">
+  <div class="card-body">
+    <h5 class="card-title">Name:{{products.p_name}}</h5>
+    <p class="card-text">Details:{{products.p_details}} </p>
+    <p class="card-text">Availability:{{products.p_availability}} </p>
+    <p class="card-text">category:{{products.p_category}}</p>
+  </div>
+</div>
+
+
+  
